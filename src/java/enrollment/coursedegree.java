@@ -134,7 +134,7 @@ public class coursedegree {
         }          
     }
 	
-    public int viewallRecords() { 
+    public int viewAllRecords() { 
 	try {
             
             Connection conn;     
@@ -168,31 +168,45 @@ public class coursedegree {
     
     public static void main(String args[]) {
 		
-       coursedegree crsdgr = new coursedegree();
-	   /*
-       crsdgr.courseid = "CCPROG3";
-       crsdgr.degree = "BSIT";
-       crsdgr.addRecord() ;
-		*/
+        coursedegree crsdgr = new coursedegree();
+	
+        /*
+        crsdgr.courseid = "CCPROG3";
+        crsdgr.degree = "BSCS";
+        crsdgr.addRecord() ;
+	*/
+	
+        /*
+        crsdgr.courseid = "CCPROG3";
+        crsdgr.degree = "BSCS";
+        crsdgr.moddegree = "BSIT";
+        crsdgr.modRecord();
+	*/
 	   
+	/*
+        crsdgr.courseid = "CCPROG3";
+        crsdgr.degree = "BSIT";
+        crsdgr.delRecord() ;
+	*/
 	   
-	   /*
-       crsdgr.moddegree = "BSIS";
-	   crsdgr.courseid = "CCPROG3";
-       crsdgr.degree = "BSCS";
-       crsdgr.modRecord();
-	   */
-	   
-	   /*(
-	   crsdgr.courseid = "CCPROG3";
-       crsdgr.degree = "BSCS";
-       crsdgr.delRecord() ;
-	   */
-	   
-	/*   
-	   crsdgr.courseid = "CCPROG2";
-       crsdgr.degree = "BSIT";
-       crsdgr.viewRecord();
-	*/   
+	/*  
+	crsdgr.courseid = "CCPROG2";
+        crsdgr.degree = "BSIT";
+        crsdgr.viewRecord();
+	
+        System.out.println(crsdgr.courseid);
+        System.out.println(crsdgr.degree);
+        */
+        
+        crsdgr.viewAllRecords();
+        
+        for (int i=0; i< crsdgr.coursedeglist.size(); i++) {
+            coursedegree a = new coursedegree();
+            a = crsdgr.coursedeglist.get(i);
+            System.out.println(a.courseid);
+            System.out.println(a.degree);
+            System.out.println ("-----");    
+        }
+        
     }
 }
