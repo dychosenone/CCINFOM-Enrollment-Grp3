@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Enrollment Pages</title>
     </head>
     <body>
         <jsp:useBean id="studentBean" class="enrollment.students" scope="session" />
@@ -21,26 +21,24 @@
         <p>Full Name: <%=studentBean.completename%></p>
         <p>Degree Code: <%=studentBean.degreeid%> </p>
         
-        <jsp:useBean id="coursesBean" class="enrollment.courses" scope="session" />
-        <% coursesBean.viewAllRecords(); %>
+        <jsp:useBean id="coursesBean" class="enrollment.enroll" scope="session" />
+        <% coursesBean.loadCourses(); %>
          <table>
              <tr>
                  <th>Course ID</th>
-                 <th>Course Name</th>
-                 <th>Department</th>
+                 <th>Course Degree</th>
              </tr>
-         <%  for(int i = 0; i < coursesBean.courselist.size(); i++) { %>
+         <%  for(int i = 0; i < coursesBean.CourseList.size(); i++) { %>
          <tr>
-             <td><%=coursesBean.courselist.get(i).courseid%></td>
-             <td><%=coursesBean.courselist.get(i).coursename%></td>
-             <td><%=coursesBean.courselist.get(i).department%></td>
+             <td><%=coursesBean.CourseList.get(i).courseid%></td>
+             <td><%=coursesBean.CourseList.get(i).degree%></td>
          </tr>
           <% } %>
          </table>
         
         
         <p> Enroll Course: </p>
-        <form name="search" action="enroll_process.jsp" method="POST">
+        <form name="search" action="addCourse.jsp" method="POST">
             <input type="text" name="studentid" id="studentid">
             <br />
             <input type="submit" value="search" name="Search">

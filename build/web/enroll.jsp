@@ -17,8 +17,7 @@
             <div>
                 <h1>Enrollment Page</h1>
                 <form name="search" action="enroll_process.jsp" method="POST">
-                    
-                    <input type="text" label="Input Student ID:" name="studentid" id="studentid">
+                    <input type="text" name="studentid" id="studentid">
                     <br />
                     <input type="submit" value="search" name="Search">
                 </form>
