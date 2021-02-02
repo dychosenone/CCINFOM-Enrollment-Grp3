@@ -12,7 +12,7 @@ public class enroll {
     public enroll() {};                                 // perform all the necessary data loading from DB
     
     // clears enrollment data of the student 
-    public int clearEnrollment (int studentId)   {   
+    public int clearEnrollment ()   {   
         
         try {
             Connection conn;
@@ -20,7 +20,7 @@ public class enroll {
             System.out.println("Connection Successful.");
             
             PreparedStatement pstmt = conn.prepareStatement("DELETE FROM enrollment WHERE studentid=?");  
-            pstmt.setInt(1, studentId);
+            pstmt.setLong(1, Student.studentid);
             pstmt.executeUpdate();
             pstmt.close();
             conn.close();
