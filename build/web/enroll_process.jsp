@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.sql.*, java.util.*, enrollment.*" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,7 +13,7 @@
         <title>Enrollment Pages</title>
     </head>
     <body>
-        <jsp:useBean id="studentBean" class="enrollment.students" scope="session" />
+        <jsp:useBean id="studentBean" class="students" scope="session" />
         <% studentBean.studentid = Integer.parseInt(request.getParameter("studentid"));
            studentBean.viewRecord();
         %>
@@ -21,7 +22,7 @@
         <p>Full Name: <%=studentBean.completename%></p>
         <p>Degree Code: <%=studentBean.degreeid%> </p>
         
-        <jsp:useBean id="coursesBean" class="enrollment.enroll" scope="session" />
+        <jsp:useBean id="coursesBean" class="enroll" scope="session" />
         <% coursesBean.loadCourses(); %>
          <table>
              <tr>

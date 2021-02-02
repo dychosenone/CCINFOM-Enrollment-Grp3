@@ -30,8 +30,8 @@ public class enroll {
 			CourseList.clear();
 			while (rs.next()) {
 				coursedegree cd = new coursedegree();
-				cd.courseid = rs.getString("courseid");
-				cd.degree = rs.getString("degree");
+				cd.courseid = rs.getString("cd.courseid");
+				cd.degree = rs.getString("cd.degree");
 				CourseList.add(cd);
 			}	
 
