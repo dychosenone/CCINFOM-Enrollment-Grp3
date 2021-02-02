@@ -123,7 +123,7 @@ public class enrollment {
         }         
     };
     
-    
+
     public int viewRecord() { 
         try {
             
