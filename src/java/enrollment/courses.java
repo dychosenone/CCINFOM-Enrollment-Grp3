@@ -1,7 +1,7 @@
 /*
-Author: Ma. Isabel Tendido     S11
-        CCINFOM
-*/
+ * Author: Ma. Isabel Tendido     S11
+ *         CCINFOM
+ */
 
 package enrollment;
 import java.sql.*;
