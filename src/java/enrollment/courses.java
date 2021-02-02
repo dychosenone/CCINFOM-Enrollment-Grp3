@@ -164,12 +164,12 @@ public class courses {
        
         courses crs = new courses ();
         
-        /*
+        
         crs.courseid = "IT";
         crs.coursename = "Isabel Tendido";
         crs.department = "Bacoor";
         crs.addRecord ();
-        */
+        
         
         /*
         crs.courseid = "IT";
@@ -193,7 +193,7 @@ public class courses {
         */
         
         
-        crs.viewAllRecords();
+        /* crs.viewAllRecords();
         
         for (int i=0; i< crs.courselist.size(); i++) {
             courses a = new courses();
@@ -203,6 +203,6 @@ public class courses {
             System.out.println(a.department);
             System.out.println ("-----");    
         }
-                
+          */     
     }
 }

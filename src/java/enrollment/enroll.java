@@ -1,6 +1,7 @@
 package enrollment;
 import java.sql.*;
 import java.util.*;
+import java.lang.String;
 
 public class enroll {
 
@@ -32,31 +33,11 @@ public class enroll {
         
     }
     // load valid courses into the course list
-    public int loadCourses () {
-        
-        try {
-            Connection conn;
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/enrolldb?useTimezone=true&serverTimezone=UTC&user=root&password=12345678");
-            System.out.println("Connection Successful.");
-            
-            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM courses");  
-            ResultSet rs = pstmt.executeQuery();
-            CourseList.clear();
-            while(rs.next()) {
-                coursedegree cd = new coursedegree ();
-                cd.courseid = rs.getString("courseid"); 
-                cd.degree = rs.getString("degree");
-                CourseList.add(cd);
-            }
-            
-            pstmt.close();
-            conn.close();
-            return 1; // Return 1 if successful
-            
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-            return 0;
-        }
+    public int loadCourses (String courseid, String degree) {
+		coursedegree courseTemp = new coursedegree();
+		courseTemp.courseid = courseid;
+		courseTemp.degree = degree;
+		CourseList.add(courseTemp);
     
     }
     public int confirmEnrollment()  {   
