@@ -19,18 +19,18 @@
                 <form name="search" action="enroll_process.jsp" method="POST">
                     <p>Student ID: </p>
                     <input type="text" name="studentid" id="studentid">
-                    
+
                     <p>Current Term </p>
                     <input type="text" name="currentTerm" id="currentTerm">
-                    
+
                     <p>School Year </p>
                     <input type="text" name="schoolYear" id="schoolYear">
                     <br />
                     <br />
                     <input type="submit" value="search" name="Search">
                 </form>
-                
-            </div>   
+
+            </div>
         </div>
     </body>
 </html>
