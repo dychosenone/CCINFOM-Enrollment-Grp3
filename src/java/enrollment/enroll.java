@@ -82,39 +82,26 @@ public class enroll {
 	}
     };
     
-    
-    public int confirmEnrollment()  {   
-        try {
-            Connection conn;
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/enrolldb?useTimezone=true&serverTimezone=UTC&user=root&password=12345678");
-            System.out.println("Connection Successful.");
-            
-            PreparedStatement pstmt = conn.prepareStatement("INSERT INTO enrollment VALUES(?,?,?,?)");
+    public int confirmEnrollment() {
+        try {           
             
             for (int i = 0; i < EnrollmentList.size(); i++) {
                 
-                enrollment a = EnrollmentList.get(i);
-                
-                pstmt.setLong(1, a.studentid);
-		pstmt.setString(2, a.courseid);
-		pstmt.setInt(3, a.term);
-		pstmt.setInt(4, a.schoolyear);
-		pstmt.executeUpdate();
+                enrollment nroll = EnrollmentList.get(i);
+                nroll.addRecord();    
             } 
-			
-            pstmt.close();
-            conn.close();
             return 1;
         
-        } catch (SQLException e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
             return 0;
         }
-    }   // saves enrollment data into the Database
+    } 
     
     public static void main (String args[]){
         
         enroll en = new enroll();
+                     
         
         students s = new students();
         s.studentid = 10100001;
@@ -134,6 +121,7 @@ public class enroll {
         }
         */
         
+        
         en.addEnrollment("CCINFOM", 1, 20192020);
         en.addEnrollment("CCINFOM", 2, 20192020);
         
@@ -149,6 +137,7 @@ public class enroll {
         }
         */
         
+        
         en.delEnrollment("CCINFOM", 1, 20192020);
         
         
@@ -162,8 +151,7 @@ public class enroll {
             System.out.println ("-----"); 
         }       
         
-        en.confirmEnrollment();
-        
+        en.confirmEnrollment();   
     }
     
 }

@@ -222,8 +222,8 @@ public class enrollment {
 	
         /*
 	nroll.studentid = 10100001;
-	nroll.courseid = "CCPROG3";
-	nroll.term = 3;
+	nroll.courseid = "CCINFOM";
+	nroll.term = 2;
 	nroll.schoolyear=20192020;
 	nroll.delRecord();
 	*/
@@ -241,7 +241,7 @@ public class enrollment {
         System.out.println(nroll.schoolyear);
         */
         
-        
+        /*        
         nroll.viewAllRecords();
         
         for (int i=0; i< nroll.enrollmentList.size(); i++) {
@@ -253,6 +253,7 @@ public class enrollment {
             System.out.println(a.schoolyear);
             System.out.println ("-----");    
         }
+        */
         
     }
 }
