@@ -10,6 +10,15 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Course Maintenance - CCINFOM</title>
+        <style>
+            body {   
+                font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+                font-size: 14px;
+                line-height: 1.42857143;
+                color: #333;
+                background-color: #fff;
+            } 
+        </style>
     </head>
     <body>
         <div class="container">
@@ -21,7 +30,7 @@
                 <jsp:useBean id="coursesBean" class="enrollment.courses" scope="session" />
                 <jsp:useBean id="coursesTemp" class="enrollment.courses" scope="page"    />
                 <% coursesBean.viewAllRecords(); %>
-                <br>Complete Course Records on Enrollment Database<br>
+                Complete Course Records on Enrollment Database<br><br>
                 <table style="width:75%" border="1">
                     <tr>
                         <td>Course ID</td>
@@ -43,9 +52,10 @@
                 </table>
                 <br>
                 <br>
-                <a href="cm_addcourse.jsp" class="list-group-item">Add Course Data</a>
-                <a href="cm_modcourse.jsp" class="list-group-item">Modify Course Data</a>
-                <a href="cm_delcourse.jsp" class="list-group-item">Delete Course Data</a>
+                <a href="cm_addcourse.jsp" class="list-group-item" style="margin:5px;">Add Course Data</a>
+                <a href="cm_modcourse.jsp" class="list-group-item" style="margin:75px;">Modify Course Data</a>
+                <a href="cm_delcourse.jsp" class="list-group-item" style="margin:10px;">Delete Course Data</a>
+                <a href="recordmanagement.jsp" class="list-group-item" style="margin:75px;">Return to Record Management</a><br>
                 
             </div>
         </div>

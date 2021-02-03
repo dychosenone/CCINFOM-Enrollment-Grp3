@@ -10,6 +10,15 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Student Maintenance - CCINFOM</title>
+        <style>
+            body {   
+                font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+                font-size: 14px;
+                line-height: 1.42857143;
+                color: #333;
+                background-color: #fff;
+            } 
+        </style>
     </head>
     <body>
         <div class="container">
@@ -21,7 +30,7 @@
                 <jsp:useBean id="studentsBean" class="enrollment.students" scope="session" />
                 <jsp:useBean id="studentsTemp" class="enrollment.students" scope="page"    />
                 <% studentsBean.viewAllRecords(); %>
-                <br>Complete Student Records on Enrollment Database<br>
+                Complete Student Records on Enrollment Database<br><br>
                 <table style="width:75%" border="1">
                     <tr>
                         <td>Student ID</td>
@@ -43,9 +52,10 @@
                 </table>
                 <br>
                 <br>
-                <a href="addstudent.jsp" class="list-group-item">Add Student Data</a>
-                <a href="modstudent.jsp" class="list-group-item">Modify Student Data</a>
-                <a href="delstudent.jsp" class="list-group-item">Delete Student Data</a>
+                <a href="addstudent.jsp" class="list-group-item" style="margin:5px;">Add Student Data</a>
+                <a href="modstudent.jsp" class="list-group-item" style="margin:75px;">Modify Student Data</a>
+                <a href="delstudent.jsp" class="list-group-item" style="margin:10px;">Delete Student Data</a>
+                <a href="recordmanagement.jsp" class="list-group-item" style="margin:75px;">Return to Record Management</a><br>
                 
             </div>
         </div>

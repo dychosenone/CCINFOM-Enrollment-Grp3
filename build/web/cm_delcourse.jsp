@@ -10,6 +10,15 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Deleting Existing Course - CCINFOM</title>
+        <style>
+            body {   
+                font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+                font-size: 14px;
+                line-height: 1.42857143;
+                color: #333;
+                background-color: #fff;
+            } 
+        </style>
     </head>
     <body>
         <div>
@@ -21,6 +30,7 @@
                     <br />
                     <br />
                     <input type="submit" value="Delete" name="delete">
+                    <br />
                     <br />
                     <br />
                 </form>

@@ -49,6 +49,15 @@ public final class coursemaintenance_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("        <title>Course Maintenance - CCINFOM</title>\n");
+      out.write("        <style>\n");
+      out.write("            body {   \n");
+      out.write("                font-family: \"Helvetica Neue\",Helvetica,Arial,sans-serif;\n");
+      out.write("                font-size: 14px;\n");
+      out.write("                line-height: 1.42857143;\n");
+      out.write("                color: #333;\n");
+      out.write("                background-color: #fff;\n");
+      out.write("            } \n");
+      out.write("        </style>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("        <div class=\"container\">\n");
@@ -80,7 +89,7 @@ public final class coursemaintenance_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("                ");
  coursesBean.viewAllRecords(); 
       out.write("\n");
-      out.write("                <br>Complete Course Records on Enrollment Database<br>\n");
+      out.write("                Complete Course Records on Enrollment Database<br><br>\n");
       out.write("                <table style=\"width:75%\" border=\"1\">\n");
       out.write("                    <tr>\n");
       out.write("                        <td>Course ID</td>\n");
@@ -112,9 +121,10 @@ public final class coursemaintenance_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("                </table>\n");
       out.write("                <br>\n");
       out.write("                <br>\n");
-      out.write("                <a href=\"cm_addcourse.jsp\" class=\"list-group-item\">Add Course Data</a>\n");
-      out.write("                <a href=\"cm_modcourse.jsp\" class=\"list-group-item\">Modify Course Data</a>\n");
-      out.write("                <a href=\"cm_delcourse.jsp\" class=\"list-group-item\">Delete Course Data</a>\n");
+      out.write("                <a href=\"cm_addcourse.jsp\" class=\"list-group-item\" style=\"margin:5px;\">Add Course Data</a>\n");
+      out.write("                <a href=\"cm_modcourse.jsp\" class=\"list-group-item\" style=\"margin:75px;\">Modify Course Data</a>\n");
+      out.write("                <a href=\"cm_delcourse.jsp\" class=\"list-group-item\" style=\"margin:75px;\">Delete Course Data</a>\n");
+      out.write("                <a href=\"recordmanagement.jsp\" class=\"list-group-item\" style=\"margin:25px;\">Return to Record Management</a><br>\n");
       out.write("                \n");
       out.write("            </div>\n");
       out.write("        </div>\n");
