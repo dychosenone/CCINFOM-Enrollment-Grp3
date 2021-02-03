@@ -15,7 +15,7 @@ public class report {
     
     
     public  ArrayList<courses>      CourseList       =  new ArrayList<>();
-    public  ArrayList<Integer>         CountList        =  new ArrayList<>();
+    public  ArrayList<Integer>      CountList        =  new ArrayList<>();
     public  int term; 
     public  int schoolyear;
     
