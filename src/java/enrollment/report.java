@@ -22,8 +22,9 @@ public class report {
     
     public int resetReport() { 
         ReportCountList.clear();
-    };
-
+		return 1;
+	}
+	
     public int generateReport()
     {
       try {
@@ -35,11 +36,11 @@ public class report {
             ResultSet rs = pstmt.executeQuery();
             CourseList.clear();
 
-             for (int i = 0; i < count.length; i++)  {
+             for (int i = 0; i < ReportCountList.size(); i++)  {
                 report re = new  report ();
                 re.CourseList.get(i).coursename = rs.getString("coursename"); 
                 re.term = rs.getInt("term"); 
-                re.SchoolYear = rs.getInt("schoolyear"); 
+                re.schoolyear = rs.getInt("schoolyear"); 
                
             }
             pstmt.executeUpdate();
