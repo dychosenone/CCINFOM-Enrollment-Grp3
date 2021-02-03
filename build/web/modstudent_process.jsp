@@ -11,6 +11,15 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Processing Modify Student Data Record</title>
+        <style>
+            body {   
+                font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+                font-size: 14px;
+                line-height: 1.42857143;
+                color: #333;
+                background-color: #fff;
+            } 
+        </style>
     </head>
     <body>
         <h1>Modifying Existing Student Record</h1>

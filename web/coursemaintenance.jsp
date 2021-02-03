@@ -27,35 +27,19 @@
             </div>
             <div class="list-group">
                 
-                <jsp:useBean id="coursesBean" class="enrollment.courses" scope="session" />
-                <jsp:useBean id="coursesTemp" class="enrollment.courses" scope="page"    />
-                <% coursesBean.viewAllRecords(); %>
-                Complete Course Records on Enrollment Database<br><br>
-                <table style="width:75%" border="1">
-                    <tr>
-                        <td>Course ID</td>
-                        <td>Course Name</td>
-                        <td>Department ID</td>
-                    </tr>
-                    <tr>
-                    <%  coursesBean.viewAllRecords();
-                        for (int i=0; i<coursesBean.courselist.size(); i++) {
-                           coursesTemp = coursesBean.courselist.get(i);
-                    %>
-                    <tr>
-                        <td><%=coursesTemp.courseid%></td>
-                        <td><%=coursesTemp.coursename%></td>
-                        <td><%=coursesTemp.department%></td>
-                    </tr>
-                    <% }
-                    %>
-                </table>
-                <br>
-                <br>
                 <a href="cm_addcourse.jsp" class="list-group-item" style="margin:5px;">Add Course Data</a>
-                <a href="cm_modcourse.jsp" class="list-group-item" style="margin:75px;">Modify Course Data</a>
-                <a href="cm_delcourse.jsp" class="list-group-item" style="margin:10px;">Delete Course Data</a>
-                <a href="recordmanagement.jsp" class="list-group-item" style="margin:75px;">Return to Record Management</a><br>
+                <br>
+                <br>
+                <a href="cm_modcourse.jsp" class="list-group-item" style="margin:5px;">Modify Course Data</a>
+                <br>
+                <br>
+                <a href="cm_delcourse.jsp" class="list-group-item" style="margin:5px;">Delete Course Data</a>
+                <br>
+                <br>
+                <a href="cm_loadcourse.jsp" class="list-group-item" style="margin:5px;">Load Course Records</a>
+                <br>
+                <br>
+                <a href="recordmanagement.jsp" class="list-group-item" style="margin:5px;">Return to Record Management</a><br>
                 
             </div>
         </div>

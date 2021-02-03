@@ -27,35 +27,19 @@
             </div>
             <div class="list-group">
                 
-                <jsp:useBean id="studentsBean" class="enrollment.students" scope="session" />
-                <jsp:useBean id="studentsTemp" class="enrollment.students" scope="page"    />
-                <% studentsBean.viewAllRecords(); %>
-                Complete Student Records on Enrollment Database<br><br>
-                <table style="width:75%" border="1">
-                    <tr>
-                        <td>Student ID</td>
-                        <td>Complete Name</td>
-                        <td>Degree ID</td>
-                    </tr>
-                    <tr>
-                    <%  studentsBean.viewAllRecords();
-                        for (int i=0; i<studentsBean.studlist.size(); i++) {
-                           studentsTemp = studentsBean.studlist.get(i);
-                    %>
-                    <tr>
-                        <td><%=studentsTemp.studentid%></td>
-                        <td><%=studentsTemp.completename%></td>
-                        <td><%=studentsTemp.degreeid%></td>
-                    </tr>
-                    <% }
-                    %>
-                </table>
-                <br>
-                <br>
                 <a href="addstudent.jsp" class="list-group-item" style="margin:5px;">Add Student Data</a>
-                <a href="modstudent.jsp" class="list-group-item" style="margin:75px;">Modify Student Data</a>
-                <a href="delstudent.jsp" class="list-group-item" style="margin:10px;">Delete Student Data</a>
-                <a href="recordmanagement.jsp" class="list-group-item" style="margin:75px;">Return to Record Management</a><br>
+                <br>
+                <br>
+                <a href="modstudent.jsp" class="list-group-item" style="margin:5px;">Modify Student Data</a>
+                <br>
+                <br>
+                <a href="delstudent.jsp" class="list-group-item" style="margin:5px;">Delete Student Data</a>
+                <br>
+                <br>
+                <a href="loadstudent.jsp" class="list-group-item" style="margin:5px;">Load Student Records</a>
+                <br>
+                <br>
+                <a href="recordmanagement.jsp" class="list-group-item" style="margin:5px;">Return to Record Management</a><br>
                 
             </div>
         </div>

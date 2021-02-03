@@ -9,13 +9,12 @@ import java.util.*;
 
 public class drop {
   
-    students                        Student             = new students();
+    public students                 Student             = new students();
     public ArrayList<enrollment>    CourseEnrolledList  = new ArrayList<> ();
-    public ArrayList<enrollment>    DropEnrolledList  = new ArrayList<> ();
+    public ArrayList<enrollment>    DropEnrolledList    = new ArrayList<> ();
 
     // perform all the necessary data loading from DB
     public drop() {
-        Student = null;
         CourseEnrolledList.clear();
         DropEnrolledList.clear();
     };  
@@ -27,14 +26,17 @@ public class drop {
     }   
     
     // load enrollment data of the student
-    public int loadEnrollment () {
+    public int loadEnrollment (int term, int schoolyear) {
         try {
             Connection conn;
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/enrolldb?useTimezone=true&serverTimezone=UTC&user=root&password=12345678");
             System.out.println("Connection Successful.");
 
-            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM enrollment WHERE studentid=?");
+            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM enrollment WHERE studentid=? AND term=? AND schoolyear=?"); 
+            
             pstmt.setLong(1, Student.studentid);
+            pstmt.setInt(2, term);
+            pstmt.setInt(3, schoolyear);
             
             ResultSet rs = pstmt.executeQuery();
             
@@ -111,6 +113,7 @@ public class drop {
     public static void main(String args[]){
         drop dp = new drop();
                      
+        /*
         students s = new students();
         s.studentid = 10100001;
         s.viewRecord();
@@ -130,6 +133,7 @@ public class drop {
             System.out.println ("-----");    
         }
         */
+        /*
                 
         dp.addDrop("CCPROG", 1, 20192020);
         dp.addDrop("CCINFOM", 2, 20192020);
@@ -146,7 +150,7 @@ public class drop {
         }
         */        
         
-        dp.delDrop("CCPROG", 1, 20192020);
+        // dp.delDrop("CCPROG", 1, 20192020);
                 
         for (int i = 0; i < dp.DropEnrolledList.size(); i++){
             enrollment a = dp.DropEnrolledList.get(i);
@@ -157,9 +161,7 @@ public class drop {
             System.out.println("school year:  " + a.schoolyear);
             System.out.println ("-----"); 
         }       
-        
         dp.confirmDrop();  
     }
-     
 }
 

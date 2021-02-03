@@ -28,8 +28,12 @@
             <div class="list-group">
                                 
                 <a href="studentmaintenance.jsp" class="list-group-item" style="margin:5px;">Student Maintenance</a>
-                <a href="coursemaintenance.jsp" class="list-group-item" style="margin:75px;">Course Maintenance</a>
-                <a href="index.html" class="list-group-item" style="margin:25px;">Return to Main Menu</a><br>
+                <br>
+                <br>
+                <a href="coursemaintenance.jsp" class="list-group-item" style="margin:5px;">Course Maintenance</a>
+                <br>
+                <br>
+                <a href="index.html" class="list-group-item" style="margin:5px;">Return to Main Menu</a><br>
                 
             </div>
         </div>
