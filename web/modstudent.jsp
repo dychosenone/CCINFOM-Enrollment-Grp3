@@ -18,13 +18,19 @@
                 <form name="modstudent"   action="modstudent_process.jsp" method="POST">
                     <p>Student ID </p>
                     <input type="text" name="studentid" id="studentid">
+
+                    <p>Modified Complete Name </p>
+                    <input type="text" name="completename" id="completename">
+
+                    <p>Modified Degree ID </p>
+                    <input type="text" name="degreeid" id="degreeid">
                     <br />
                     <br />
-                    <input type="submit" value="Search" name="search">
+                    <input type="submit" value="Modify Record" name="modify record">
                     <br />
                     <br />
                 </form>
-                <a href="studentmaintainance.jsp">Back to Student Maintenance</a><br>
+                <a href="studentmaintenance.jsp">Back to Student Maintenance</a><br>
             </div>
         </div>
     </body>

@@ -1,10 +1,10 @@
 SMAP
-studentmaintainance_jsp.java
+coursemaintenance_jsp.java
 JSP
 *S JSP
 *F
-+ 0 studentmaintainance.jsp
-studentmaintainance.jsp
++ 0 coursemaintenance.jsp
+coursemaintenance.jsp
 *L
 5,16:44
 21,2:60,10

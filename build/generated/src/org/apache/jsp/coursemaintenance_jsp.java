@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class studentmaintainance_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class coursemaintenance_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -48,61 +48,61 @@ public final class studentmaintainance_jsp extends org.apache.jasper.runtime.Htt
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>Student Maintenance - CCINFOM</title>\n");
+      out.write("        <title>Course Maintenance - CCINFOM</title>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("        <div class=\"container\">\n");
       out.write("            <div class=\"page-header\">\n");
-      out.write("                <h1>Student Maintenance</h1>  \n");
+      out.write("                <h1>Course Maintenance</h1>  \n");
       out.write("            </div>\n");
       out.write("            <div class=\"list-group\">\n");
       out.write("                \n");
       out.write("                ");
-      enrollment.students studentsBean = null;
+      enrollment.courses coursesBean = null;
       synchronized (session) {
-        studentsBean = (enrollment.students) _jspx_page_context.getAttribute("studentsBean", PageContext.SESSION_SCOPE);
-        if (studentsBean == null){
-          studentsBean = new enrollment.students();
-          _jspx_page_context.setAttribute("studentsBean", studentsBean, PageContext.SESSION_SCOPE);
+        coursesBean = (enrollment.courses) _jspx_page_context.getAttribute("coursesBean", PageContext.SESSION_SCOPE);
+        if (coursesBean == null){
+          coursesBean = new enrollment.courses();
+          _jspx_page_context.setAttribute("coursesBean", coursesBean, PageContext.SESSION_SCOPE);
         }
       }
       out.write("\n");
       out.write("                ");
-      enrollment.students studentsTemp = null;
+      enrollment.courses coursesTemp = null;
       synchronized (_jspx_page_context) {
-        studentsTemp = (enrollment.students) _jspx_page_context.getAttribute("studentsTemp", PageContext.PAGE_SCOPE);
-        if (studentsTemp == null){
-          studentsTemp = new enrollment.students();
-          _jspx_page_context.setAttribute("studentsTemp", studentsTemp, PageContext.PAGE_SCOPE);
+        coursesTemp = (enrollment.courses) _jspx_page_context.getAttribute("coursesTemp", PageContext.PAGE_SCOPE);
+        if (coursesTemp == null){
+          coursesTemp = new enrollment.courses();
+          _jspx_page_context.setAttribute("coursesTemp", coursesTemp, PageContext.PAGE_SCOPE);
         }
       }
       out.write("\n");
       out.write("                ");
- studentsBean.viewAllRecords(); 
+ coursesBean.viewAllRecords(); 
       out.write("\n");
-      out.write("                <br>Complete Student Records on Enrollment Database<br>\n");
+      out.write("                <br>Complete Course Records on Enrollment Database<br>\n");
       out.write("                <table style=\"width:75%\" border=\"1\">\n");
       out.write("                    <tr>\n");
-      out.write("                        <td>Student ID</td>\n");
-      out.write("                        <td>Complete Name</td>\n");
-      out.write("                        <td>Degree ID</td>\n");
+      out.write("                        <td>Course ID</td>\n");
+      out.write("                        <td>Course Name</td>\n");
+      out.write("                        <td>Department ID</td>\n");
       out.write("                    </tr>\n");
       out.write("                    <tr>\n");
       out.write("                    ");
-  studentsBean.viewAllRecords();
-                        for (int i=0; i<studentsBean.studlist.size(); i++) {
-                           studentsTemp = studentsBean.studlist.get(i);
+  coursesBean.viewAllRecords();
+                        for (int i=0; i<coursesBean.courselist.size(); i++) {
+                           coursesTemp = coursesBean.courselist.get(i);
                     
       out.write("\n");
       out.write("                    <tr>\n");
       out.write("                        <td>");
-      out.print(studentsTemp.studentid);
+      out.print(coursesTemp.courseid);
       out.write("</td>\n");
       out.write("                        <td>");
-      out.print(studentsTemp.completename);
+      out.print(coursesTemp.coursename);
       out.write("</td>\n");
       out.write("                        <td>");
-      out.print(studentsTemp.degreeid);
+      out.print(coursesTemp.department);
       out.write("</td>\n");
       out.write("                    </tr>\n");
       out.write("                    ");
@@ -112,9 +112,9 @@ public final class studentmaintainance_jsp extends org.apache.jasper.runtime.Htt
       out.write("                </table>\n");
       out.write("                <br>\n");
       out.write("                <br>\n");
-      out.write("                <a href=\"addstudent.jsp\" class=\"list-group-item\">Add Student Data</a>\n");
-      out.write("                <a href=\"modstudent.jsp\" class=\"list-group-item\">Modify Student Data</a>\n");
-      out.write("                <a href=\"delstudent.jsp\" class=\"list-group-item\">Delete Student Data</a>\n");
+      out.write("                <a href=\"cm_addcourse.jsp\" class=\"list-group-item\">Add Course Data</a>\n");
+      out.write("                <a href=\"cm_modcourse.jsp\" class=\"list-group-item\">Modify Course Data</a>\n");
+      out.write("                <a href=\"cm_delcourse.jsp\" class=\"list-group-item\">Delete Course Data</a>\n");
       out.write("                \n");
       out.write("            </div>\n");
       out.write("        </div>\n");

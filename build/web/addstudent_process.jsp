@@ -30,6 +30,6 @@
             }
         %>
         <br>     
-        <a href="studentmaintainance.jsp">Back to Student Maintenance</a><br>
+        <a href="studentmaintenance.jsp">Back to Student Maintenance</a><br>
     </body>
 </html>

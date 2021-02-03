@@ -1,6 +1,6 @@
 <%-- 
-    Document   : delstudent
-    Created on : 02 3, 21, 8:13:19 PM
+    Document   : cm_delcourse
+    Created on : 02 3, 21, 10:02:16 PM
     Author     : ccslearner
 --%>
 
@@ -9,22 +9,22 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Deleting Existing Student - CCINFOM</title>
+        <title>Deleting Existing Course - CCINFOM</title>
     </head>
     <body>
         <div>
             <div>
-                <h1>Enter the student details to delete:</h1>
-                <form name="delstudent"   action="delstudent_process.jsp" method="POST">
+                <h1>Enter the course details to delete:</h1>
+                <form name="cm_delcourse"   action="cm_delcourse_process.jsp" method="POST">
                     <p>Student ID </p>
-                    <input type="text" name="studentid" id="studentid">
+                    <input type="text" name="courseid" id="courseid">
                     <br />
                     <br />
                     <input type="submit" value="Delete" name="delete">
                     <br />
                     <br />
                 </form>
-                <a href="studentmaintenance.jsp">Back to Student Maintenance</a><br>
+                <a href="coursemaintenance.jsp">Back to Course Maintenance</a><br>
             </div>
         </div>
     </body>

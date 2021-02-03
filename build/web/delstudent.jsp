@@ -15,7 +15,7 @@
         <div>
             <div>
                 <h1>Enter the student details to delete:</h1>
-                <form name="modstudent"   action="modstudent_process.jsp" method="POST">
+                <form name="delstudent"   action="delstudent_process.jsp" method="POST">
                     <p>Student ID </p>
                     <input type="text" name="studentid" id="studentid">
                     <br />
@@ -24,7 +24,7 @@
                     <br />
                     <br />
                 </form>
-                <a href="studentmaintainance.jsp">Back to Student Maintenance</a><br>
+                <a href="studentmaintenance.jsp">Back to Student Maintenance</a><br>
             </div>
         </div>
     </body>

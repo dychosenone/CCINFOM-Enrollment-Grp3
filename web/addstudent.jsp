@@ -30,7 +30,7 @@
                     <br />
                     <br />
                 </form>
-                <a href="studentmaintainance.jsp">Back to Student Maintenance</a><br>
+                <a href="studentmaintenance.jsp">Back to Student Maintenance</a><br>
             </div>
         </div>
     </body>
