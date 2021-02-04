@@ -87,14 +87,15 @@
                 <h1>Drop Confirmation</h1>
             </div> 
         
-            <jsp:useBean id="subBean" class="enrollment.drop" scope="session" />
+            <jsp:useBean id="courseBean" class="enrollment.drop" scope="session" />
             <% 
                 int cterm = (int) request.getSession().getAttribute("term");
                 int schoolyear = (int) request.getSession().getAttribute("year");
                 String courseid = request.getParameter("courseid");
 
-                int result = subBean.confirmDrop();
-                int cResult = subBean.delDrop(courseid, cterm, schoolyear);
+                int result = courseBean.confirmDrop();
+                int cResult = courseBean.delDrop(courseid, cterm, schoolyear);
+                courseBean.clearDrop();
 
                 if(result == 1 && cResult == 1) { 
                     session.invalidate();
