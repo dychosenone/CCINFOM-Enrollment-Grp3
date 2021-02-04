@@ -9,15 +9,14 @@ public class enroll {
  
     // perform all the necessary data loading from DB
     public enroll() {
-        Student = null;
         EnrollmentList.clear();
         CourseList.clear();        
     }; 
     
     // clears enrollment data of the student 
     public int clearEnrollment () {   
-	EnrollmentList.clear();
-	return 1;
+		EnrollmentList.clear();
+		return 1;
     };
 	
     // load valid courses into the course list

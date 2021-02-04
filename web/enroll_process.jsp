@@ -48,7 +48,7 @@
         <table>
              <tr>
                  <th>Course ID</th>
-                 <th>Course Degree</th>
+                 <th>Course</th>
              </tr>
          <%  for(int i = 0; i < coursesBean.CourseList.size(); i++) { %>
             <tr>
