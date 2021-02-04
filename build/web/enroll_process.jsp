@@ -1,7 +1,7 @@
 <%-- 
     Document   : enroll_process
     Created on : 02 2, 21, 11:20:02 PM
-    Author     : ccslearner
+    Authors    : CCINFOM GRP3 S11 (Tendido, Dy, Norona, Bacayan)
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -221,33 +221,34 @@
             <% coursesBean.loadEnrollment(currentTerm, schoolYear); %>
             <h3>Courses Available</h3>
             <table>
-                 <tr>
-                     <th>Course ID</th>
-                     <th>Course</th>
-                 </tr>
+                <tr>
+                    <th>Course ID</th>
+                    <th>Course</th>
+                </tr>
                  
-             <%  for(int i = 0; i < coursesBean.CourseList.size(); i++) { %>
+            <%  for(int i = 0; i < coursesBean.CourseList.size(); i++) { %>
                 <tr>
                     <td><%=coursesBean.CourseList.get(i).courseid%></td>
                     <td><%=coursesBean.CourseList.get(i).degree%></td>
                 </tr>
-              <% } %>
-             </table>
-            
+            <% } %>
+            </table>
+             
+            <br>
             <h3>Courses Enrolled for School Year <b><%=schoolYear%></b> Term <b><%=currentTerm%></b> </h3> 
             <table>
-                 <tr>
-                     <th>Course ID</th>
-                     <th>Term</th>
-                     <th>School Year</th>
-                 </tr>
-             <%  for(int i = 0; i < coursesBean.CoursesEnrolled.size(); i++) { %>
+                <tr>
+                    <th>Course ID</th>
+                    <th>Term</th>
+                    <th>School Year</th>
+                </tr>
+            <%  for(int i = 0; i < coursesBean.CoursesEnrolled.size(); i++) { %>
                 <tr>
                     <td><%=coursesBean.CoursesEnrolled.get(i).courseid%></td>
                     <td><%=coursesBean.CoursesEnrolled.get(i).term%></td>
                     <td><%=coursesBean.CoursesEnrolled.get(i).schoolyear%></td>
                 </tr>
-              <% } %>
+            <% } %>
             </table>
 
             <p> Enroll Course: </p>
@@ -256,23 +257,24 @@
                 <button class="btn success" value="addToCart" name="addToCart">Add to Cart</button>
             </form>
             
-            <form name="submit" action="clearCart.jsp" method="POST">
-                <button class="btn danger"  value="Clear" name="Clear" >Reset Cart</button>
-            </form>
-            
             <form name="submit" action="submit.jsp" method="POST">
                 <button class="btn info"  value="Enroll" name="Enroll" >Enroll</button>
             </form>
             
+            <form name="submit" action="clearCart.jsp" method="POST">
+                <button class="btn danger"  value="Clear" name="Clear" >Reset Cart</button>
+            </form>
+            
+            
             <h3>My Cart</h3>
             <table>
                 <tr>
-                     <th>Student ID</th>
-                     <th>Course ID</th>
-                     <th>Term</th>
-                     <th>School Year</th>
+                    <th>Student ID</th>
+                    <th>Course ID</th>
+                    <th>Term</th>
+                    <th>School Year</th>
                 </tr>
-             <%  for(int i = 0; i < coursesBean.EnrollmentList.size(); i++) { %>
+            <%  for(int i = 0; i < coursesBean.EnrollmentList.size(); i++) { %>
                 <tr>
                     <td><%=coursesBean.EnrollmentList.get(i).studentid%></td>
                     <td><%=coursesBean.EnrollmentList.get(i).courseid%></td>
@@ -280,8 +282,11 @@
                     <td><%=coursesBean.EnrollmentList.get(i).schoolyear%></td>
                 </tr>
              <% } %>
-             </table>
-
+            </table>
+            <br><br>
+            <div class="list-group">
+                <a href="index.html" class="list-group-item">Return to Main Menu</a><br>
+            </div>
              
         </div>
     </body>

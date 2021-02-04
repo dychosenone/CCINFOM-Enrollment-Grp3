@@ -1,7 +1,7 @@
 <%-- 
     Document   : resetdrop
     Created on : 02 4, 21, 11:33:52 AM
-    Author     : ccslearner
+    Authors    : CCINFOM GRP3 S11 (Tendido, Dy, Norona, Bacayan)
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -84,7 +84,7 @@
     <body>
         <div class="container">
             <div class="page-header">
-                <h1>Drop Configuration</h1>
+                <h1>Reset Drop Configuration</h1>
             </div> 
         
             <jsp:useBean id="courseBean" class="enrollment.drop" scope="session"/>

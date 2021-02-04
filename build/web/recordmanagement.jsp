@@ -1,7 +1,7 @@
 <%-- 
     Document   : recordmanagement
     Created on : 02 4, 21, 12:37:14 AM
-    Author     : ccslearner
+    Authors    : CCINFOM GRP3 S11 (Tendido, Dy, Norona, Bacayan)
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

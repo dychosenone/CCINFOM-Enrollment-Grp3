@@ -1,7 +1,7 @@
 <%-- 
     Document   : enroll
     Created on : 02 2, 21, 7:57:38 PM
-    Author     : ccslearner
+    Authors    : CCINFOM GRP3 S11 (Tendido, Dy, Norona, Bacayan)
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

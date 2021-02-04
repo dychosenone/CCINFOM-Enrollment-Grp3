@@ -1,15 +1,17 @@
 <%-- 
-    Document   : enroll_process
-    Created on : 02 2, 21, 11:20:02 PM
+    Document   : generatereport
+    Created on : 02 3, 21, 1:07:40 AM
     Authors    : CCINFOM GRP3 S11 (Tendido, Dy, Norona, Bacayan)
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import ="java.sql.*, java.util.*" %> 
 <!DOCTYPE html>
 <html>
+
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Enrollment Pages</title>
+        <title>Generating Report From Query</title>
         <style>
             .page-header {
             padding-bottom: 9px;
@@ -42,10 +44,15 @@
             }
             
            .list-group-item:first-child {
-            border-radius: 4px;
-            margin-bottom: 0;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
             }
             
+            .list-group-item:nth-child(2) {
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            margin-bottom: 0;
+            }            
             
             a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, button.list-group-item:hover {
             color: #555;
@@ -181,113 +188,52 @@
     </head>
     <body>
         <div class="container">
-            <jsp:useBean id="studentBean" class="enrollment.students" scope="session" />
-            <%  
-                int currentTerm;
-                int schoolYear;
-                long studentid;
-                if(request.getSession().getAttribute("studentid") == null){
-                    studentBean.studentid = Long.parseLong(request.getParameter("studentid"));
-                    studentBean.viewRecord();
-                    currentTerm = Integer.parseInt(request.getParameter("currentTerm"));
-                    schoolYear = Integer.parseInt(request.getParameter("schoolYear"));
-                    studentid = Long.parseLong(request.getParameter("studentid"));
-                    session.setAttribute("term", currentTerm);
-                    session.setAttribute("year", schoolYear);
-                    session.setAttribute("studentid", studentid);
-                } else {
-                    studentBean.studentid = (long) request.getSession().getAttribute("studentid");
-                    studentid = (long) request.getSession().getAttribute("studentid");
-                    currentTerm = (int) request.getSession().getAttribute("term");
-                    schoolYear = (int) request.getSession().getAttribute("year");
-                }
-            %>
-            
             <div class="page-header">
-               <h1> Enrollment Page </h1>
+               <h1>Generated Report</h1>
             </div>
-            
-            <p>Student ID: <%=studentBean.studentid%></p>
-            <p>Full Name: <%=studentBean.completename%></p>
-            <p>Degree Code: <%=studentBean.degreeid%> </p>
-            <p>Current Term: <%=currentTerm%>
-            <p>School Year: <%=schoolYear%> </p>
-            
+
+            <jsp:useBean id="reportsBean" class="enrollment.report" scope="page" />
+            <%  reportsBean.term     = Integer.parseInt(request.getParameter("term"));
+                reportsBean.schoolyear    = Integer.parseInt(request.getParameter("schoolyear"));
+                if (reportsBean.generateReport()!=0) {
+            %>
+            Generation of a report of term <%=reportsBean.term%> and School Year <%=reportsBean.schoolyear%> was successful <br>
+
+            <p>Current Term: <%=reportsBean.term%>
+            <p>School Year: <%=reportsBean.schoolyear%> </p>
+
             <br>
-            <jsp:useBean id="coursesBean" class="enrollment.enroll" scope="session" />
-            <% coursesBean.Student.studentid = studentBean.studentid; %>
-            <% coursesBean.Student.degreeid = studentBean.degreeid; %>
-            <% coursesBean.loadCourses(); %>
-            <% coursesBean.loadEnrollment(currentTerm, schoolYear); %>
-            <h3>Courses Available</h3>
+            <h3>Courses offered </h3>
+
+            <% reportsBean.term = reportsBean.term; %>
+            <% reportsBean.schoolyear = reportsBean.schoolyear; %>
+
             <table>
                 <tr>
-                    <th>Course ID</th>
-                    <th>Course</th>
+                    <th>Course ID </th> <th> Course Name </th> <th> Total Enrolled Students</th>
                 </tr>
-                 
-            <%  for(int i = 0; i < coursesBean.CourseList.size(); i++) { %>
+            <%  for(int i = 0; i < reportsBean.CourseList.size(); i++) { %>
                 <tr>
-                    <td><%=coursesBean.CourseList.get(i).courseid%></td>
-                    <td><%=coursesBean.CourseList.get(i).degree%></td>
-                </tr>
-            <% } %>
-            </table>
-             
-            <br>
-            <h3>Courses Enrolled for School Year <b><%=schoolYear%></b> Term <b><%=currentTerm%></b> </h3> 
-            <table>
-                <tr>
-                    <th>Course ID</th>
-                    <th>Term</th>
-                    <th>School Year</th>
-                </tr>
-            <%  for(int i = 0; i < coursesBean.CoursesEnrolled.size(); i++) { %>
-                <tr>
-                    <td><%=coursesBean.CoursesEnrolled.get(i).courseid%></td>
-                    <td><%=coursesBean.CoursesEnrolled.get(i).term%></td>
-                    <td><%=coursesBean.CoursesEnrolled.get(i).schoolyear%></td>
+                    <td><%=reportsBean.CourseList.get(i).courseid%></td>
+                    <td><%=reportsBean.CourseList.get(i).coursename%></td>
+                    <td><%=reportsBean.CountList.get(i)%></td>
+
                 </tr>
             <% } %>
             </table>
 
-            <p> Enroll Course: </p>
-            <form name="search" action="addCourse.jsp" method="POST">
-                <input type="text" name="courseid" id="courseid">
-                <button class="btn success" value="addToCart" name="addToCart">Add to Cart</button>
-            </form>
-            
-            <form name="submit" action="submit.jsp" method="POST">
-                <button class="btn info"  value="Enroll" name="Enroll" >Enroll</button>
-            </form>
-            
-            <form name="submit" action="clearCart.jsp" method="POST">
-                <button class="btn danger"  value="Clear" name="Clear" >Reset Cart</button>
-            </form>
-            
-            
-            <h3>My Cart</h3>
-            <table>
-                <tr>
-                    <th>Student ID</th>
-                    <th>Course ID</th>
-                    <th>Term</th>
-                    <th>School Year</th>
-                </tr>
-            <%  for(int i = 0; i < coursesBean.EnrollmentList.size(); i++) { %>
-                <tr>
-                    <td><%=coursesBean.EnrollmentList.get(i).studentid%></td>
-                    <td><%=coursesBean.EnrollmentList.get(i).courseid%></td>
-                    <td><%=coursesBean.EnrollmentList.get(i).term%></td>
-                    <td><%=coursesBean.EnrollmentList.get(i).schoolyear%></td>
-                </tr>
-             <% } %>
-            </table>
+            <%
+                } else {
+            %>
+            Generation of a report with term was not successful<br>
+            <%
+                }
+            %>
             <br><br>
             <div class="list-group">
+                <a href="report.jsp" class="list-group-item">Generate Another Report</a>
                 <a href="index.html" class="list-group-item">Return to Main Menu</a><br>
             </div>
-             
         </div>
     </body>
 </html>

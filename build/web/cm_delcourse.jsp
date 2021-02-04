@@ -1,7 +1,7 @@
 <%-- 
     Document   : cm_delcourse
     Created on : 02 3, 21, 10:02:16 PM
-    Author     : ccslearner
+    Authors    : CCINFOM GRP3 S11 (Tendido, Dy, Norona, Bacayan)
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

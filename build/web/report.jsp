@@ -1,6 +1,6 @@
 <%-- 
-    Document   : resetdrop
-    Created on : 02 4, 21, 11:33:52 AM
+    Document   : report
+    Created on : 02 3, 21, 1:07:11 AM
     Authors    : CCINFOM GRP3 S11 (Tendido, Dy, Norona, Bacayan)
 --%>
 
@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title> Reset Drop </title>
+        <title>Report - CCINFOM</title>
         <style>
             .page-header {
             padding-bottom: 9px;
@@ -78,31 +78,70 @@
             * {
             box-sizing: border-box;
             }
+            
+            .btn {
+            border: 1px solid black;            
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit;
+            background-color: inherit;
+            
+            border: 1px solid #ddd;
+            color: inherit;
+            }
+
+            /* Green */ 
+            .success:hover {
+            border: 1.5px solid #ddd;
+            background-color: #4CAF50;
+            color: white;
+            }
+
+            /* Full-width input fields */
+            input[type=text] {
+            width: 45%;
+            padding: 15px;
+            margin: 0px 0 12px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit;
+            }
+
+            input[type=text]:focus {
+            background-color: #ddd;            
+            outline: none;
+            }
            
         </style>
     </head>
     <body>
         <div class="container">
             <div class="page-header">
-                <h1>Reset Drop Configuration</h1>
-            </div> 
-        
-            <jsp:useBean id="courseBean" class="enrollment.drop" scope="session"/>
-            <%  int cterm = (int) request.getSession().getAttribute("term");
-                int schoolyear = (int) request.getSession().getAttribute("year");
-                String courseid = request.getParameter("courseid");
-                int val = courseBean.delDrop(courseid, cterm, schoolyear);
-                val = courseBean.clearDrop();
-                if(val == 1) { %>
+               <h1>Enter enrollment details to generate report :</h1>
+            </div>
+            <div>
+                <form name="report"   action="generatereport.jsp" method="POST">
+                    <p>Term </p>
+                    <input type="text" name="term" id="term">
 
-                    <p>The Drop Cart has successfully been reset.</p>
-            <%    } %>
-        
-            <br>
-            <div class="list-group">
-                <a href="drop_process.jsp" class="list-group-item">Return to Dropping</a><br>
-            </div> 
+                    <p>School Year</p>
+                    <input type="text" name="schoolyear" id="schoolyear">
+
+                    <br><br>
+                    <button class="btn success" value="Submit" name="submit">Submit</button>
+                    <br><br><br>
+                </form>
+                <div class="list-group">
+                <a href="index.html" class="list-group-item">Return to Main Menu</a><br>
+                </div>
+            </div>
         </div>
     </body>
 </html>
-

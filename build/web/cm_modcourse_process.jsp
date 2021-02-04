@@ -1,7 +1,7 @@
 <%-- 
     Document   : cm_modcourse_process
     Created on : 02 3, 21, 10:37:34 PM
-    Author     : ccslearner
+    Authors    : CCINFOM GRP3 S11 (Tendido, Dy, Norona, Bacayan)
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
