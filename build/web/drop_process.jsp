@@ -94,6 +94,7 @@
             
             border: 1px solid #ddd;
             color: inherit;
+            margin-right: 5px;
                
             }
 
@@ -111,10 +112,16 @@
             color: white;
             }
             
+            /* Red*/ 
+            .danger:hover {
+            border: 1.5px solid #ddd;
+            background-color: #f44336;
+            color: white;
+            }            
 
             /* Full-width input fields */
             input[type=text] {
-            width: 45%;
+            width: 35%;
             padding: 15px;
             margin: 0px 0 12px 0;
             display: inline-block;
@@ -123,6 +130,7 @@
             font-family: inherit;
             font-size: inherit;
             line-height: inherit;
+            margin-right: 10px;
             }
 
             input[type=text]:focus {
@@ -156,15 +164,28 @@
             display: inline;
             }
             
+            select{
+            
+            border: 1px solid black;            
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit;
+            
+            border: 1px solid #ddd;
+            color: inherit;   
+            }
+                        
         </style>
     </head>
     <body>
         <div class="container">
             
-        
             <jsp:useBean id="studBean" class="enrollment.students" scope="session"/>
             <% 
-            
                 long studid;
                 int cterm;
                 int schoolyear;
@@ -174,26 +195,23 @@
                     studBean.studentid = Long.parseLong(request.getParameter("studid"));
                     studBean.viewRecord();
                 
-                
                     cterm = Integer.parseInt(request.getParameter("cterm"));
                     schoolyear = Integer.parseInt(request.getParameter("schoolyear"));
                     studid = Long.parseLong(request.getParameter("studid"));
-               
+
                     session.setAttribute("term", cterm);
                     session.setAttribute("year", schoolyear);
                     session.setAttribute("studid", studid);
                 } 
-            
+
                 else {
-                    
                     studBean.studentid = (long) request.getSession().getAttribute("studid");
                     studid = (long)request.getSession().getAttribute("studid");
                     cterm = (int)request.getSession().getAttribute("term");
                     schoolyear = (int) request.getSession().getAttribute("year");
                 }
-            
+
             %>
-        
         
             <div class="page-header">
                <h1> Dropping of Courses </h1>
@@ -233,38 +251,13 @@
             </table>
             
             
-            
-            
-            
-            
-            
-            
-            <br><p> Select Course to Drop </p>
+            <br>
+            <p> Select Course to Drop </p>
             <form name="courseid" action="addtodrop.jsp" method="POST" >
-            <select name="courseid" class="floated"> 
-                
-            <% for (int i = 0; i < courseBean.CourseEnrolledList.size(); i++) { %>
-        
-            <option value = "<%= (String) courseBean.CourseEnrolledList.get(i).courseid%>">
-        
-            <%= (String) courseBean.CourseEnrolledList.get(i).courseid %> 
-        
-            </option>
-                
-            <% } %>
-     
-            </select>
-            
-            <button class="btn success" value="Add to Drop" id="courseid" name="courseid">Add to Drop</button>
-            
+                <input type ="text" id="courseid" name="courseid" class="floated"> 
+                <button class="btn success" value="Add to Drop" id="courseid" name="courseid">Add to Drop</button>
             </form>
-            
-            
-            
-            
-            
-            
-            
+                                   
             
             <form name="Confirm" action="submitdrop.jsp" method="POST" >
                 <button class="btn info" value="Submit">Confirm Drop</button>                               
@@ -274,9 +267,8 @@
             <form name="Reset" action="resetdrop.jsp" method="POST" >
                 <button class="btn danger" value="Reset">Reset Drop</button>
             </form>
-            <br><br>
-            
-        
+            <br><br><br>
+                       
             <table>
                 <tr>
                     

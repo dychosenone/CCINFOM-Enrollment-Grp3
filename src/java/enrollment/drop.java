@@ -2,19 +2,19 @@
  * Author: Yeohan Lorenzo Nornona     S11
  *         CCINFOM
  */
-
 package enrollment;
 import java.sql.*;
 import java.util.*;
 
 public class drop {
   
-    public students                 Student             = new students();
+    public students                        Student             = new students();
     public ArrayList<enrollment>    CourseEnrolledList  = new ArrayList<> ();
-    public ArrayList<enrollment>    DropEnrolledList    = new ArrayList<> ();
+    public ArrayList<enrollment>    DropEnrolledList  = new ArrayList<> ();
 
     // perform all the necessary data loading from DB
     public drop() {
+       
         CourseEnrolledList.clear();
         DropEnrolledList.clear();
     };  
@@ -33,7 +33,6 @@ public class drop {
             System.out.println("Connection Successful.");
 
             PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM enrollment WHERE studentid=? AND term=? AND schoolyear=?"); 
-            
             pstmt.setLong(1, Student.studentid);
             pstmt.setInt(2, term);
             pstmt.setInt(3, schoolyear);
@@ -161,7 +160,10 @@ public class drop {
             System.out.println("school year:  " + a.schoolyear);
             System.out.println ("-----"); 
         }       
+        
+        
         dp.confirmDrop();  
     }
+     
 }
 
