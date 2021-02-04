@@ -235,9 +235,7 @@
             <p> Enroll Course: </p>
             <form name="search" action="addCourse.jsp" method="POST">
                 <input type="text" name="courseid" id="courseid">
-            </form>
-            <form>
-                <button class="btn success" value="Add to Drop" name="addToCart">Add to Cart</button>
+                <button class="btn success" value="addToCart" name="addToCart">Add to Cart</button>
             </form>
             
             <form name="submit" action="submit.jsp" method="POST">
