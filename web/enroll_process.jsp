@@ -213,16 +213,19 @@
             <p>Current Term: <%=currentTerm%>
             <p>School Year: <%=schoolYear%> </p>
             
-            <br><h3>Available Courses for Enrollment </h3>
+            <br>
             <jsp:useBean id="coursesBean" class="enrollment.enroll" scope="session" />
             <% coursesBean.Student.studentid = studentBean.studentid; %>
             <% coursesBean.Student.degreeid = studentBean.degreeid; %>
             <% coursesBean.loadCourses(); %>
+            <% coursesBean.loadEnrollment(currentTerm, schoolYear); %>
+            <h3>Courses Available</h3>
             <table>
                  <tr>
                      <th>Course ID</th>
                      <th>Course</th>
                  </tr>
+                 
              <%  for(int i = 0; i < coursesBean.CourseList.size(); i++) { %>
                 <tr>
                     <td><%=coursesBean.CourseList.get(i).courseid%></td>
@@ -230,14 +233,31 @@
                 </tr>
               <% } %>
              </table>
-
+            
+            <h3>Courses Enrolled for School Year <b><%=schoolYear%></b> Term <b><%=currentTerm%></b> </h3> 
+            <table>
+                 <tr>
+                     <th>Course ID</th>
+                     <th>Term</th>
+                     <th>School Year</th>
+                 </tr>
+             <%  for(int i = 0; i < coursesBean.CoursesEnrolled.size(); i++) { %>
+                <tr>
+                    <td><%=coursesBean.CoursesEnrolled.get(i).courseid%></td>
+                    <td><%=coursesBean.CoursesEnrolled.get(i).term%></td>
+                    <td><%=coursesBean.CoursesEnrolled.get(i).schoolyear%></td>
+                </tr>
+              <% } %>
+            </table>
 
             <p> Enroll Course: </p>
             <form name="search" action="addCourse.jsp" method="POST">
                 <input type="text" name="courseid" id="courseid">
+                <button class="btn success" value="addToCart" name="addToCart">Add to Cart</button>
             </form>
-            <form>
-                <button class="btn success" value="Add to Drop" name="addToCart">Add to Cart</button>
+            
+            <form name="submit" action="clearCart.jsp" method="POST">
+                <button class="btn danger"  value="Clear" name="Clear" >Reset Cart</button>
             </form>
             
             <form name="submit" action="submit.jsp" method="POST">
