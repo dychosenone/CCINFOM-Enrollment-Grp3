@@ -25,7 +25,7 @@
             }
             
             for(int i = 0; i < coursesBean.CourseList.size(); i++) {
-                if((coursesBean.CourseList.get(i).courseid).equals(courseid))
+                if(coursesBean.CourseList.get(i).courseid.equals(courseid))
                     found = 1;
             }
             
@@ -35,7 +35,7 @@
             }
             
             if(returnValue == 1 && found == 1 && isEnrolled == 1)
-                returnValue = coursesBean.addEnrollment(courseid, currentTerm, schoolYear);
+                coursesBean.addEnrollment(courseid, currentTerm, schoolYear);
             
             if(returnValue == 1 && found == 1 && isEnrolled == 1) { %>
                 <p>The course was added to the cart successfully.</p>

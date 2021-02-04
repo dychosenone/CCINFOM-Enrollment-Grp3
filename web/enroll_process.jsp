@@ -234,7 +234,7 @@
               <% } %>
              </table>
             
-              <h3>Courses Enrolled for School Year <b><%=schoolYear%></b> Term <b><%=currentTerm%></b> </h3> 
+            <h3>Courses Enrolled for School Year <b><%=schoolYear%></b> Term <b><%=currentTerm%></b> </h3> 
             <table>
                  <tr>
                      <th>Course ID</th>
@@ -254,6 +254,10 @@
             <form name="search" action="addCourse.jsp" method="POST">
                 <input type="text" name="courseid" id="courseid">
                 <button class="btn success" value="addToCart" name="addToCart">Add to Cart</button>
+            </form>
+            
+            <form name="submit" action="clearCart.jsp" method="POST">
+                <button class="btn danger"  value="Clear" name="Clear" >Reset Cart</button>
             </form>
             
             <form name="submit" action="submit.jsp" method="POST">
