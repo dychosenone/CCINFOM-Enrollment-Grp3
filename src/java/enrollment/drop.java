@@ -1,6 +1,6 @@
 /*
- * Author: Yeohan Lorenzo Nornona     S11
- *         CCINFOM
+ * Author: Tendido, Dy, Norona, Bacayan     
+ *         CCINFOM S11
  */
 package enrollment;
 import java.sql.*;

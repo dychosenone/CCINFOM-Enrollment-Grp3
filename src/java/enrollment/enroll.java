@@ -1,3 +1,8 @@
+/*
+ * Author: Tendido, Dy, Norona, Bacayan     
+ *         CCINFOM S11
+ */
+
 package enrollment;
 import java.sql.*;
 import java.util.*;

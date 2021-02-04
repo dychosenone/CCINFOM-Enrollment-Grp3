@@ -1,6 +1,6 @@
 /*
- * Author: Ma. Isabel Tendido     S11
- *         CCINFOM
+ * Author: Tendido, Dy, Norona, Bacayan     
+ *         CCINFOM S11
  */
 
 package enrollment;
