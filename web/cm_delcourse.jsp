@@ -128,7 +128,7 @@
             </div>
             <div> 
                 <form name="cm_delcourse"   action="cm_delcourse_process.jsp" method="POST">
-                    <p>Student ID </p>
+                    <p>Course ID </p>
                     <input type="text" name="courseid" id="courseid">
                     
                     <br><br>

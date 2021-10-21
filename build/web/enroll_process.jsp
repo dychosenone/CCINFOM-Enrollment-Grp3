@@ -285,7 +285,7 @@
             </table>
             <br><br>
             <div class="list-group">
-                <a href="index.html" class="list-group-item">Return to Main Menu</a><br>
+                <a href="cancel.jsp" class="list-group-item">Return to Main Menu</a><br>
             </div>
              
         </div>
